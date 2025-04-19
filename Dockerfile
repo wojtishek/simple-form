@@ -1,9 +1,9 @@
 FROM dockette/web:php-83
 
-COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
-COPY composer.json /srv/composer.json
+COPY ./.docker/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 WORKDIR /srv
-RUN composer install
 
-EXPOSE 80
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
