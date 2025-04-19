@@ -1,0 +1,27 @@
+extensions:
+	webloader: WebLoader\Nette\Extension(%appDir%, %wwwDir%, %debugMode%)
+
+services:
+	wlCssFilter: WebLoader\Filter\CssUrlsFilter(%wwwDir%)
+	wlCssMinFilter: WebLoader\Filter\CssMinFilter
+
+webloader:
+	debugger: false
+	css:
+		default:
+			filters:
+				- @wlCssFilter
+			fileFilters:
+				- @wlCssMinFilter
+			files:
+				- %vendorDir%/twbs/bootstrap/dist/css/bootstrap.min.css
+				- %wwwDir%/assets/css/tempus-dominus.min.css
+	js:
+		default:
+			files:
+				- %wwwDir%/assets/js/netteForms.min.js
+				- %wwwDir%/assets/js/naja.min.js
+				- %vendorDir%/twbs/bootstrap/dist/js/bootstrap.bundle.min.js
+				- %wwwDir%/assets/js/popper.min.js
+				- %wwwDir%/assets/js/tempus-dominus.min.js
+				- %wwwDir%/assets/js/main.js

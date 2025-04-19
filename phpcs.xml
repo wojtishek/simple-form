@@ -1,0 +1,19 @@
+<ruleset
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="./vendor/squizlabs/php_codesniffer/phpcs.xsd">
+
+    <arg name="basepath" value="./"/>
+    <arg name="cache" value="./temp/cache.dat"/>
+
+    <file>app/</file>
+
+    <rule ref="./vendor/orisai/coding-standard/src/ruleset-8.3.xml"/>
+
+    <rule ref="SlevomatCodingStandard.Files.TypeNameMatchesFileName">
+        <properties>
+            <property name="rootNamespaces" type="array">
+                <element key="app" value="App"/>
+            </property>
+        </properties>
+    </rule>
+</ruleset>

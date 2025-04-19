@@ -1,0 +1,53 @@
+{
+	"name": "nette/web-project",
+	"description": "Nette: Standard Web Project",
+	"keywords": ["nette"],
+	"type": "project",
+	"license": ["MIT", "BSD-3-Clause", "GPL-2.0-only", "GPL-3.0-only"],
+	"require": {
+		"php": ">= 8.3",
+		"nette/application": "^3.2.3",
+		"nette/bootstrap": "^3.2",
+		"nette/caching": "^3.2",
+		"nette/database": "^3.2",
+		"nette/di": "^3.2",
+		"nette/forms": "^3.2",
+		"nette/http": "^3.3",
+		"nette/mail": "^4.0",
+		"nette/robot-loader": "^4.0",
+		"nette/security": "^3.2",
+		"nette/utils": "^4.0",
+		"latte/latte": "^3.0",
+		"tracy/tracy": "^2.10",
+		"twbs/bootstrap": "^5.3",
+		"inspirecz/webloader": "^6.0",
+		"contributte/forms-bootstrap": "^0.8.4",
+		"tubalmartin/cssmin": "^4.1",
+		"scssphp/scssphp": "^2.0"
+	},
+	"require-dev": {
+		"nette/tester": "^2.5",
+		"symfony/thanks": "^1",
+		"phpstan/phpstan-nette": "^2.0",
+		"phpstan/phpstan": "^2.1",
+		"squizlabs/php_codesniffer": "^3.12",
+		"orisai/coding-standard": "^3.11"
+	},
+	"autoload": {
+		"psr-4": {
+			"App\\": "app"
+		}
+	},
+	"scripts": {
+		"phpcs": "php vendor/bin/phpcs --standard=phpcs.xml",
+		"phpcbf": "php vendor/bin/phpcbf --standard=phpcs.xml",
+		"phpstan": "php vendor/bin/phpstan analyse -c phpstan.neon --memory-limit=1G"
+	},
+	"minimum-stability": "stable",
+	"config": {
+		"allow-plugins": {
+			"symfony/thanks": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{block content}
+<div>
+    <div class="border rounded-3 shadow-sm p-4">
+        {control simpleForm}
+    </div>
+    {snippet simpleFormResult}
+        <div n:ifset="$result" class="pt-5">
+            <p><strong>Výsledek formuláře:</strong></p>
+            <ul class="list-unstyled">
+                <li><strong>Jméno:</strong> {$result['name']}</li>
+                <li><strong>E-mail:</strong> {$result['email']}</li>
+                <li><strong>Datum narození:</strong> {$result['birthDate']}</li>
+                <li><span n:class="badge, $result['isOlderThan20'] ? 'text-bg-success' : 'text-bg-danger'">{$result['isOlderThan20'] ? 'Registrovaný má 20 let' : 'Registrovaný nemá 20 let'}</span></li>
+            </ul>
+        </div>
+    {/snippet}
+</div>
