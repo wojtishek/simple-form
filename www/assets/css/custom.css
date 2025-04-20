@@ -1,0 +1,14 @@
+.netteFormsModal {
+    border: none !important;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem !important;
+}
+
+.netteFormsModal button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem !important;
+}

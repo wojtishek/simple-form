@@ -16,6 +16,7 @@ webloader:
 			files:
 				- %vendorDir%/twbs/bootstrap/dist/css/bootstrap.min.css
 				- %wwwDir%/assets/css/tempus-dominus.min.css
+				- %wwwDir%/assets/css/custom.css
 	js:
 		default:
 			files:

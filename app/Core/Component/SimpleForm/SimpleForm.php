@@ -26,13 +26,15 @@ class SimpleForm extends Control
 		$form = FormFactory::create();
 		$form->getElementPrototype()->setAttribute('class', 'ajax');
 		$form->addText('name', 'Jméno')
-			->setRequired('Zadejte, prosím, své jméno.');
+			->setRequired('Zadejte, prosím, své jméno.')
+            ->addRule($form::MinLength, 'Jméno musí mít alespoň %d znaky.', 3);
 		$form->addText('email', 'E-mail')
 			->setRequired('Zadejte, prosím, svůj e-mail.')
 			->addRule($form::Email, 'Zadejte platný e-mail.');
 		$form->addText('birthDate', 'Datum narození')
 			->setRequired('Zadejte, prosím, datum narození.')
-			->setHtmlAttribute('class', 'datepicker');
+			->setHtmlAttribute('class', 'datepicker')
+            ->addRule($form::PatternInsensitive, 'Zadejte datum ve formátu DD. MM. YYYY.', '^\d{1,2}\.\s\d{1,2}\.\s\d{4}$');
 		$form->addSubmit('send', 'Odeslat');
 		$form->onSuccess[] = [$this, 'processForm'];
 
@@ -58,7 +60,7 @@ class SimpleForm extends Control
 
 	public function render(): void
 	{
-		$this->getTemplate()->setFile(__DIR__ . '/simpleForm.latte')->render();
+		$this->getTemplate()->setFile(__DIR__ . '/SimpleForm.latte')->render();
 	}
 
 }
