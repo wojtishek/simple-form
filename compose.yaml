@@ -10,6 +10,8 @@ services:
       - simple-form-net
     volumes:
       - .:/srv
+    depends_on:
+      - db
 
   db:
     container_name: simple-form-db
