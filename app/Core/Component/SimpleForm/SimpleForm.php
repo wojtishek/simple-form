@@ -52,6 +52,7 @@ class SimpleForm extends Control
 				'birthdate' => $birthDateDT->format('Y-m-d'),
 			]);
 			$values->isOlderThan20 = $now->diff($birthDateDT)->y >= 20;
+            $form->reset();
 			$this->onDone($values);
 		} catch (Throwable $e) {
 			$this->onError($e->getMessage());

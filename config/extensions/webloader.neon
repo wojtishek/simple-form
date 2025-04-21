@@ -20,9 +20,11 @@ webloader:
 	js:
 		default:
 			files:
-				- %wwwDir%/assets/js/netteForms.min.js
-				- %wwwDir%/assets/js/naja.min.js
+				- %wwwDir%/assets/js/libs/netteForms.min.js
+				- %wwwDir%/assets/js/libs/naja.min.js
 				- %vendorDir%/twbs/bootstrap/dist/js/bootstrap.bundle.min.js
-				- %wwwDir%/assets/js/popper.min.js
-				- %wwwDir%/assets/js/tempus-dominus.min.js
-				- %wwwDir%/assets/js/main.js
+				- %wwwDir%/assets/js/libs/popper.min.js
+				- %wwwDir%/assets/js/libs/tempus-dominus.min.js
+		datepicker:
+			files:
+				- %wwwDir%/assets/js/datepicker.js

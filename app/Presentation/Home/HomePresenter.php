@@ -25,7 +25,7 @@ final class HomePresenter extends BasePresenter
 			$this->getTemplate()->result = $values;
 			$this->flashMessage('Formulář byl úspěšně odeslán.', 'success');
 			if ($this->isAjax()) {
-				$this['simpleForm']->redrawControl();
+                $this['simpleForm']->redrawControl();
 				$this->redrawControl('flashes');
 				$this->redrawControl('simpleFormResult');
 			} else {
@@ -35,7 +35,6 @@ final class HomePresenter extends BasePresenter
 		$simpleForm->onError[] = function (string $message): void {
 			$this->flashMessage('Nastala chyba při odesílání formuláře.', 'danger');
 			if ($this->isAjax()) {
-				$this['simpleForm']->redrawControl();
 				$this->redrawControl('flashes');
 			} else {
 				$this->redirect('this');

@@ -22,4 +22,9 @@ class BasePresenter extends Presenter
 		return $this->webLoader->createJavaScriptLoader('default');
 	}
 
+    protected function createComponentDatepickerjs()
+    {
+        return $this->webLoader->createJavaScriptLoader('datepicker');
+    }
+
 }
