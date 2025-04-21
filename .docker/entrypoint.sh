@@ -2,8 +2,8 @@
 set -e
 
 mkdir -p /srv/www/webtemp
-mkdir -p /srv/www/temp
-mkdir -p /srv/www/log
+mkdir -p /srv/temp
+mkdir -p /srv/log
 chown -R www-data:www-data /srv/www
 
 cd /srv
